@@ -1,5 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import Business from './components/Business';
+import SearchBar from './components/SearchBar';
+import React from 'react';
+
+
+let businesses = [];
+for (let i = 0; i<10; i++) {
+  businesses.push(<Business key={i} />)
+};
+let searchBar = <SearchBar />;
 
 function App() {
   return (
@@ -18,6 +28,8 @@ function App() {
           Learn React
         </a>
       </header>
+      <SearchBar onSearch={handleSubmit} />
+      {businesses}
     </div>
   );
 }
